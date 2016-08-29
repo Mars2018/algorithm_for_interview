@@ -9,6 +9,7 @@ public class Sort {
         int[] arrOrigin = {10, 3, 6, 7, 12, 15, 63, 100, 7, 8, 13, 56, 32, 74};
         int[] arrCopy  = Arrays.copyOf(arrOrigin, arrOrigin.length);
 
+
         bubbleSort(arrCopy);
         System.out.println("\n********Bubble Sort********");
         System.out.print(Arrays.toString(arrCopy));
