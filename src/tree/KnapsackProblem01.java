@@ -3,6 +3,7 @@ package tree;
 import java.util.Arrays;
 
 /**
+ * 0-1背包问题
  * Created by mars_wang on 2016/8/29.
  */
 public class KnapsackProblem01 {
