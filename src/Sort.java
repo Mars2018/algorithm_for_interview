@@ -162,6 +162,38 @@ public class Sort {
             }
     }
 
+    public static void heapSort(int[] arr){
+        buildHeap(arr);
+        int n = arr.length;
+        for(int i = n - 1; i >=1; --i ){
+            swap(arr, 0, i);
+            heapify(arr, 0, i);
+        }
+    }
+
+    private static void buildHeap(int[] arr) {
+        int n = arr.length;
+        for (int i = n/2-1; i >= 0 ; --i){
+            heapify(arr, i, n);
+        }
+    }
+
+    private static void heapify(int[] arr, int index, int max) {
+        int left = 2*index + 1;//左孩子
+        int right = 2 * index + 2;//右孩子
+        int largest = 0;//三个值的最大值
+        if (left < max && arr[left] > arr[index])
+            largest = left;
+        else
+            largest = index;
+        if (right > max && arr[right] > arr[largest])
+            largest = right;
+        if (largest != index){
+            swap(arr, largest,index);
+            heapify(arr, largest, max);
+        }
+
+    }
 
 
 }
