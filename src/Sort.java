@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Created by mars_wang on 2016/8/15.
+ * Created by MarsWang on 2016/8/15.
  */
 public class Sort {
     public static void main(String[] args) {
@@ -162,6 +162,10 @@ public class Sort {
             }
     }
 
+    /**
+     * 堆排序
+     * @param arr 堆数组
+     */
     public static void heapSort(int[] arr){
         buildHeap(arr);
         int n = arr.length;
@@ -171,6 +175,10 @@ public class Sort {
         }
     }
 
+    /**
+     * 建堆
+     * @param arr 堆数组
+     */
     private static void buildHeap(int[] arr) {
         int n = arr.length;
         for (int i = n/2-1; i >= 0 ; --i){
@@ -178,6 +186,12 @@ public class Sort {
         }
     }
 
+    /**
+     * 维护堆
+     * @param arr 数组
+     * @param index 开始节点
+     * @param max 数组最大范围
+     */
     private static void heapify(int[] arr, int index, int max) {
         int left = 2*index + 1;//左孩子
         int right = 2 * index + 2;//右孩子
