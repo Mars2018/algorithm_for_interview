@@ -1,5 +1,6 @@
 package tree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public class TreeTest {
 
         Tree tree = new Tree(root);
 
-        tree.preOrderTraverse();
+        /*tree.preOrderTraverse();
         System.out.print("先序遍历（非递归）：");
         printNodeList(tree.preOrderNodes);
 
@@ -69,7 +70,10 @@ public class TreeTest {
         tree.printTreeByLevel(root);
 
         System.out.println("\nZigZag打印：");
-        tree.printTreeByZigZag(root);
+        tree.printTreeByZigZag(root);*/
+
+        ArrayList<Integer> res = tree.PrintFromTopToBottom(root);
+        System.out.print(res);
     }
 
     private static void printNodeList(List<Node> nodes) {

@@ -284,4 +284,50 @@ public class Tree {
         head.right = preIn(p, pi + index - ni + 1, pj, n, index+1, nj, map);
         return head;
     }
+
+    /**
+     * 层次遍历二叉树
+     * @param root
+     * @return
+     */
+    public ArrayList<Integer> PrintFromTopToBottom(Node root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        if (root == null)
+            return res;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node tmp = queue.poll();
+            res.add(tmp.value);
+            if (tmp.left != null)
+                queue.add(tmp.left);
+            if (tmp.right != null)
+                queue.add(tmp.right);
+        }
+        return res;
+    }
+
+    /**
+     * 二叉树中和为某一值的所有路径
+     * @param root
+     * @param target
+     * @return
+     */
+    private ArrayList<ArrayList<Integer>> listAll = new ArrayList<>();
+    private ArrayList<Integer> list = new ArrayList<>();
+    public ArrayList<ArrayList<Integer>> FindPath(Node root,int target) {
+        if (root == null)
+            return listAll;
+        list.add(root.value);
+        target -= root.value;
+        if(target == 0 && root.left == null && root.right == null)
+            listAll.add(new ArrayList<Integer>(list));
+        FindPath(root.left, target);
+        FindPath(root.right, target);
+        list.remove(list.size()-1);
+        return listAll;
+    }
+
+
+
 }
